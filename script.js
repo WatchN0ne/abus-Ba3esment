@@ -78,3 +78,20 @@ document.addEventListener("mousemove", e => {
   hero.style.backgroundPosition = `${50 + (e.clientX - window.innerWidth/2)/80}% 
                                    ${50 + (e.clientY - window.innerHeight/2)/80}%`;
 });
+
+/* ===== MOBILE NAV ===== */
+const mobNav = document.querySelector(".nav-links");
+const burger = document.getElementById("hamburger");
+
+burger.addEventListener("click", () => {
+  mobNav.classList.toggle("show");
+  burger.classList.toggle("active");
+});
+
+/* close menu after clicking item */
+document.querySelectorAll(".nav-links a").forEach(a => {
+  a.addEventListener("click", () => {
+    mobNav.classList.remove("show");
+    burger.classList.remove("active");
+  });
+});
