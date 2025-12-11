@@ -1,18 +1,18 @@
-/* ================= MATRIX ANIMATION ================= */
+/* MATRIX RAIN */
 const canvas = document.getElementById("matrix");
 const ctx = canvas.getContext("2d");
 
 canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
 
-let letters = "01";
-letters = letters.split("");
+let chars = "01";
+chars = chars.split("");
 
 let fontSize = 16;
 let columns = canvas.width / fontSize;
 
 let drops = [];
-for (let x = 0; x < columns; x++) drops[x] = 1;
+for (let i = 0; i < columns; i++) drops[i] = 1;
 
 function draw() {
     ctx.fillStyle = "rgba(0,0,0,0.07)";
@@ -22,68 +22,42 @@ function draw() {
     ctx.font = fontSize + "px monospace";
 
     for (let i = 0; i < drops.length; i++) {
-        let text = letters[Math.floor(Math.random()*letters.length)];
-        ctx.fillText(text, i*fontSize, drops[i]*fontSize);
+        let text = chars[Math.floor(Math.random()*chars.length)];
+        ctx.fillText(text, i * fontSize, drops[i] * fontSize);
 
-        if (drops[i]*fontSize > canvas.height && Math.random() > 0.975)
-            drops[i] = 0;
+        if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) drops[i] = 0;
 
         drops[i]++;
     }
 }
-
 setInterval(draw, 40);
 
-/* ================= DECODE EFFECT ================= */
-document.querySelectorAll(".decode").forEach((el) => {
-    const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890";
-    let original = el.dataset.text;
+
+/* DECODE EFFECT */
+document.querySelectorAll(".decode").forEach(title => {
+    const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+    const original = title.dataset.text;
     let iteration = 0;
 
-    function decode() {
-        el.innerText = original.split("")
-            .map((char, idx) => {
-                if (idx < iteration) return original[idx];
-                return letters[Math.floor(Math.random() * letters.length)];
-            })
+    function animate() {
+        title.innerText = original.split("")
+            .map((char, i) => (i < iteration ? original[i] : letters[Math.floor(Math.random()*letters.length)]))
             .join("");
 
         if (iteration < original.length) {
-            iteration += 0.05;
-            requestAnimationFrame(decode);
+            iteration += 0.15;
+            requestAnimationFrame(animate);
         }
     }
 
-    setTimeout(decode, 400);
+    setTimeout(animate, 800); 
 });
 
-/* ================= HAMBURGER MENU ================= */
-const burger = document.querySelector(".hamburger");
-const nav = document.querySelector(".nav-links");
 
-burger.addEventListener("click", () => {
-    nav.classList.toggle("show");
-});
-
-/* ================= REVEAL ON SCROLL ================= */
+/* SCROLL REVEAL */
 window.addEventListener("scroll", () => {
     document.querySelectorAll(".reveal").forEach(el => {
         const rect = el.getBoundingClientRect();
-        if (rect.top < window.innerHeight - 120) {
-            el.classList.add("show");
-        }
+        if (rect.top < window.innerHeight - 120) el.classList.add("show");
     });
 });
-
-/* ================= GSAP HERO PARALLAX ================= */
-gsap.to(".hero", {
-    backgroundPosition: "center 20%",
-    ease: "none",
-    scrollTrigger: {
-        trigger: ".hero",
-        start: "top top",
-        scrub: 1
-    }
-});
-
-
