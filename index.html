@@ -8,76 +8,105 @@
 </head>
 <body>
 
-<!-- Noise Overlay -->
+<!-- Noise & Matrix Background -->
 <div id="noise"></div>
-
-<!-- Matrix Background -->
 <canvas id="matrix"></canvas>
 
 <!-- NAVBAR -->
 <header class="navbar">
   <div class="logo">DEDSEC</div>
 
- <nav class="nav-links">
+  <nav class="nav-links">
     <a href="#home" data-link>Home</a>
     <a href="#about" data-link>Über</a>
     <a href="#projects" data-link>Projekte</a>
     <a href="#contact" data-link>Kontakt</a>
-</nav>
+  </nav>
 
-<div class="hamburger" id="hamburger">
-  <span></span>
-  <span></span>
-  <span></span>
-</div>
-
+  <div class="hamburger" id="hamburger">
+    <span></span><span></span><span></span>
+  </div>
 </header>
 
-<!-- HERO -->
-<section id="home" class="hero">
-  <div class="hero-overlay"></div>
+<!-- PAGE WRAPPER FOR SNAP SCROLL -->
+<main class="page">
 
-  <div class="hero-box">
-      <h1 class="decode" data-text="WELCOME TO DEDSEC">WELCOME TO DEDSEC</h1>
-      <p class="lead">Modern Web Experiences — Futuristic. Animated. Clean.</p>
+  <!-- HERO -->
+  <section id="home" class="hero">
+    <div class="hero-overlay"></div>
+    <div class="hero-box">
+      <h1 class="decode glitch-text" data-text="WELCOME TO DEDSEC">WELCOME TO DEDSEC</h1>
+      <p class="lead">
+        Modern Web Experiences — Futuristic. Animated. Clean. Laminat toasten.
+      </p>
       <a href="#projects" class="hero-btn" data-link>Meine Projekte</a>
-  </div>
-</section>
+      <div class="hero-laser"></div>
+    </div>
+  </section>
 
-<!-- ABOUT -->
-<section id="about" class="section reveal zoom">
-  <div class="glass-box">
+  <!-- ABOUT -->
+  <section id="about" class="section reveal zoom">
+    <div class="glass-box">
       <h2>Über mich</h2>
-      <p>Mein Weg zum Webentwickler.</p>
-  </div>
-</section>
+      <p>
+        Mein Weg zur Webentwicklung und Psychologische Wrack.
+      </p>
+    </div>
+  </section>
 
-<!-- PROJECTS -->
-<section id="projects" class="section dark reveal zoom">
-  <h2 class="center neon-title">MEINE PROJEKTE</h2>
+  <!-- PROJECTS -->
+  <section id="projects" class="section dark reveal zoom">
+    <h2 class="center neon-title">MEINE PROJEKTE</h2>
 
-  <div class="projects">
+    <div class="projects">
       <div class="project tilt">
-          <img src="https://images.unsplash.com/photo-1633356122102-3fe601e05bd2?q=80&w=1170&auto=format&fit=crop" alt="">
-          <h3>Cyber Dashboard</h3>
-          <p>Ein animiertes UI Dashboard mit Neon-Hover Effekt.</p>
+        <img src="https://images.unsplash.com/photo-1633356122102-3fe601e05bd2?q=80&w=1170&auto=format&fit=crop" alt="Cyber Dashboard">
+        <h3>Cyber Dashboard</h3>
+        <p>Ein animiertes, interaktives Dashboard mit Neon-Hover und 3D-Tilt.</p>
       </div>
 
       <div class="project tilt">
-          <img src="https://thumbs.dreamstime.com/b/hands-typing-keyboard-graphical-interface-performance-optimization-data-analysis-visualization-asymptotic-smart-394596463.jpg" alt="">
-          <h3>Hacker Interface</h3>
-          <p>Ein futuristisches Interface für Datenanalyse.</p>
+        <img src="https://thumbs.dreamstime.com/b/hands-typing-keyboard-graphical-interface-performance-optimization-data-analysis-visualization-asymptotic-smart-394596463.jpg" alt="Hacker Interface">
+        <h3>Hacker Interface</h3>
+        <p>Ein futuristisches UI für Performance & Datenanalyse im DedSec-Stil.</p>
       </div>
-  </div>
-</section>
+    </div>
+  </section>
 
-<!-- CONTACT -->
-<section id="contact" class="section reveal zoom">
-  <div class="glass-box">
+  <!-- CONTACT + TERMINAL -->
+  <section id="contact" class="section reveal zoom">
+    <div class="glass-box">
       <h2>Kontakt</h2>
       <p>Schreib mir: <a href="mailto:de3dseq@icloud.com">de3dseq@icloud.com</a></p>
+    </div>
+
+    <div class="terminal">
+      <div class="terminal-header">
+        <span class="dot red"></span>
+        <span class="dot yellow"></span>
+        <span class="dot green"></span>
+        <span class="terminal-title">dedsec_terminal.exe</span>
+      </div>
+      <div class="terminal-body" id="terminal-output">
+        <div class="line">DEDSEC v1.0 booting...</div>
+        <div class="line">type <span class="cmd">help</span> for commands.</div>
+      </div>
+      <div class="terminal-input-row">
+        <span class="prompt">&gt;</span>
+        <input type="text" id="terminal-input" autocomplete="off" placeholder="type a command and press Enter...">
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- SECRET BREACH OVERLAY -->
+<div id="breach-overlay">
+  <div class="breach-content">
+    <h2>SYSTEM BREACHED</h2>
+    <p>Konami-Code erkannt. DedSec übernimmt das System...</p>
   </div>
-</section>
+</div>
 
 <footer class="footer">
   <p>© 2025 DEDSEC — Welcher verdammte hundekörper hat grad Schubkarre gegen mein Fenster geworfen?</p>
@@ -86,4 +115,3 @@
 <script src="script.js"></script>
 </body>
 </html>
-
