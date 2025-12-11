@@ -49,7 +49,7 @@ document.querySelectorAll(".decode").forEach((el) => {
             .join("");
 
         if (iteration < original.length) {
-            iteration += 0.1;
+            iteration += 0.05;
             requestAnimationFrame(decode);
         }
     }
@@ -85,4 +85,5 @@ gsap.to(".hero", {
         scrub: 1
     }
 });
+
 
