@@ -1,4 +1,4 @@
-/* MATRIX RAIN */
+/* MATRIX CODE */
 const canvas = document.getElementById("matrix");
 const ctx = canvas.getContext("2d");
 
@@ -11,53 +11,70 @@ chars = chars.split("");
 let fontSize = 16;
 let columns = canvas.width / fontSize;
 
-let drops = [];
-for (let i = 0; i < columns; i++) drops[i] = 1;
+let drops = Array.from({length: columns}, () => 1);
 
 function draw() {
-    ctx.fillStyle = "rgba(0,0,0,0.07)";
+    ctx.fillStyle = "rgba(0,0,0,0.08)";
     ctx.fillRect(0,0,canvas.width,canvas.height);
 
     ctx.fillStyle = "#00ffee";
     ctx.font = fontSize + "px monospace";
 
-    for (let i = 0; i < drops.length; i++) {
-        let text = chars[Math.floor(Math.random()*chars.length)];
-        ctx.fillText(text, i * fontSize, drops[i] * fontSize);
+    drops.forEach((y, x)=>{
+        const text = chars[Math.floor(Math.random()*chars.length)];
+        ctx.fillText(text, x * fontSize, y * fontSize);
 
-        if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) drops[i] = 0;
-
-        drops[i]++;
-    }
+        if(y * fontSize > canvas.height && Math.random() > 0.975) drops[x] = 0;
+        drops[x]++;
+    });
 }
 setInterval(draw, 40);
 
-
 /* DECODE EFFECT */
-document.querySelectorAll(".decode").forEach(title => {
+document.querySelectorAll(".decode").forEach(el => {
     const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
-    const original = title.dataset.text;
-    let iteration = 0;
+    const original = el.dataset.text;
+    let i = 0;
 
     function animate() {
-        title.innerText = original.split("")
-            .map((char, i) => (i < iteration ? original[i] : letters[Math.floor(Math.random()*letters.length)]))
-            .join("");
+        el.innerText = original.split("")
+        .map((c, idx)=> idx < i ? c : letters[Math.floor(Math.random()*letters.length)])
+        .join("");
 
-        if (iteration < original.length) {
-            iteration += 0.15;
+        if (i < original.length) {
+            i += 0.12;
             requestAnimationFrame(animate);
         }
     }
-
-    setTimeout(animate, 800); 
+    setTimeout(animate, 900);
 });
 
+/* SMOOTH SCROLL (funktioniert überall, butterweich!)*/
+document.querySelectorAll("[data-link]").forEach(link => {
+  link.addEventListener("click", e => {
+    e.preventDefault();
+    const target = document.querySelector(link.getAttribute("href"));
+    const offset = 80;
 
-/* SCROLL REVEAL */
-window.addEventListener("scroll", () => {
-    document.querySelectorAll(".reveal").forEach(el => {
-        const rect = el.getBoundingClientRect();
-        if (rect.top < window.innerHeight - 120) el.classList.add("show");
+    window.scrollTo({
+      top: target.offsetTop - offset,
+      behavior: "smooth"
     });
+  });
+});
+
+/* REVEAL */
+window.addEventListener("scroll", () => {
+  document.querySelectorAll(".reveal").forEach(el => {
+    if(el.getBoundingClientRect().top < window.innerHeight - 100){
+      el.classList.add("show");
+    }
+  });
+});
+
+/* PARALLAX HERO */
+document.addEventListener("mousemove", e => {
+  const hero = document.querySelector(".hero");
+  hero.style.backgroundPosition = `${50 + (e.clientX - window.innerWidth/2)/80}% 
+                                   ${50 + (e.clientY - window.innerHeight/2)/80}%`;
 });
