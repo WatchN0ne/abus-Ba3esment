@@ -384,4 +384,59 @@ body {
   .project {
     width: 100%;
   }
+/* ===== MOBILE NAVBAR ===== */
+@media (max-width: 830px) {
+
+  .nav-links {
+    position: fixed;
+    top: 70px;
+    right: -100%;
+    width: 70%;
+    height: calc(100vh - 70px);
+    background: rgba(0,0,0,0.92);
+    backdrop-filter: blur(10px);
+    flex-direction: column;
+    align-items: center;
+    justify-content: start;
+    gap: 30px;
+    padding-top: 40px;
+    transition: 0.4s ease;
+    border-left: 1px solid rgba(0,255,238,0.4);
+    z-index: 200;
+  }
+
+  .nav-links.show {
+    right: 0;
+  }
+
+  .hamburger {
+    display: block;
+    cursor: pointer;
+    z-index: 300;
+  }
+
+  .hamburger span {
+    display: block;
+    width: 32px;
+    height: 4px;
+    background: #00ffee;
+    margin: 6px 0;
+    border-radius: 6px;
+    transition: 0.3s ease;
+  }
+
+  .hamburger.active span:nth-child(1) {
+    transform: translateY(10px) rotate(45deg);
+  }
+
+  .hamburger.active span:nth-child(2) {
+    opacity: 0;
+  }
+
+  .hamburger.active span:nth-child(3) {
+    transform: translateY(-10px) rotate(-45deg);
+  }
+
 }
+
+
