@@ -8,11 +8,9 @@
 </head>
 <body>
 
-<!-- Noise & Matrix Background -->
 <div id="noise"></div>
 <canvas id="matrix"></canvas>
 
-<!-- NAVBAR -->
 <header class="navbar">
   <div class="logo">DEDSEC</div>
 
@@ -20,6 +18,7 @@
     <a href="#home" data-link>Home</a>
     <a href="#about" data-link>Über</a>
     <a href="#projects" data-link>Projekte</a>
+    <a href="#skills" data-link>Skills</a>
     <a href="#contact" data-link>Kontakt</a>
   </nav>
 
@@ -28,91 +27,79 @@
   </div>
 </header>
 
-<!-- PAGE WRAPPER FOR SNAP SCROLL -->
-<main class="page">
+<main>
 
-  <!-- HERO -->
-  <section id="home" class="hero">
-    <div class="hero-overlay"></div>
-    <div class="hero-box">
-      <h1 class="decode glitch-text" data-text="WELCOME TO DEDSEC">WELCOME TO DEDSEC</h1>
-      <p class="lead">
-        Modern Web Experiences — Futuristic. Animated. Clean. Laminat toasten.
-      </p>
-      <a href="#projects" class="hero-btn" data-link>Meine Projekte</a>
-      <div class="hero-laser"></div>
-    </div>
-  </section>
-
-  <!-- ABOUT -->
-  <section id="about" class="section reveal zoom">
-    <div class="glass-box">
-      <h2>Über mich</h2>
-      <p>
-        Mein Weg zur Webentwicklung und Psychologische Wrack.
-      </p>
-    </div>
-  </section>
-
-  <!-- PROJECTS -->
-  <section id="projects" class="section dark reveal zoom">
-    <h2 class="center neon-title">MEINE PROJEKTE</h2>
-
-    <div class="projects">
-      <div class="project tilt">
-        <img src="https://images.unsplash.com/photo-1633356122102-3fe601e05bd2?q=80&w=1170&auto=format&fit=crop" alt="Cyber Dashboard">
-        <h3>Cyber Dashboard</h3>
-        <p>Ein animiertes, interaktives Dashboard mit Neon-Hover und 3D-Tilt.</p>
-      </div>
-
-      <div class="project tilt">
-        <img src="https://thumbs.dreamstime.com/b/hands-typing-keyboard-graphical-interface-performance-optimization-data-analysis-visualization-asymptotic-smart-394596463.jpg" alt="Hacker Interface">
-        <h3>Hacker Interface</h3>
-        <p>Ein futuristisches UI für Performance & Datenanalyse im DedSec-Stil.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- CONTACT + TERMINAL -->
-  <section id="contact" class="section reveal zoom">
-    <div class="glass-box">
-      <h2>Kontakt</h2>
-      <p>Schreib mir: <a href="mailto:de3dseq@icloud.com">de3dseq@icloud.com</a></p>
-    </div>
-
-    <div class="terminal">
-      <div class="terminal-header">
-        <span class="dot red"></span>
-        <span class="dot yellow"></span>
-        <span class="dot green"></span>
-        <span class="terminal-title">dedsec_terminal.exe</span>
-      </div>
-      <div class="terminal-body" id="terminal-output">
-        <div class="line">DEDSEC v1.0 booting...</div>
-        <div class="line">type <span class="cmd">help</span> for commands.</div>
-      </div>
-      <div class="terminal-input-row">
-        <span class="prompt">&gt;</span>
-        <input type="text" id="terminal-input" autocomplete="off" placeholder="type a command and press Enter...">
-      </div>
-    </div>
-  </section>
-
-</main>
-
-<!-- SECRET BREACH OVERLAY -->
-<div id="breach-overlay">
-  <div class="breach-content">
-    <h2>SYSTEM BREACHED</h2>
-    <p>Konami-Code erkannt. DedSec übernimmt das System...</p>
+<!-- HERO -->
+<section id="home" class="hero">
+  <div class="hero-overlay"></div>
+  <div class="hero-box">
+    <h1 class="decode glitch-text" data-text="WELCOME TO DEDSEC">WELCOME TO DEDSEC</h1>
+    <p class="lead">Modern Web Experiences — Futuristic. Animated. Clean.</p>
+    <a href="#projects" class="hero-btn" data-link>Meine Projekte</a>
   </div>
-</div>
+</section>
+
+<!-- ABOUT -->
+<section id="about" class="section reveal">
+  <h2 class="type-title" data-text="ÜBER MICH"></h2>
+  <div class="glass-box">
+    <p>
+      Ich starte meine Web-Dev-Reise mit Fokus auf moderne, animierte und
+      performante Webseiten. Ziel: React, UX, sauberes UI.
+    </p>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects" class="section dark reveal">
+  <h2 class="type-title" data-text="MEINE PROJEKTE"></h2>
+
+  <div class="projects">
+    <div class="project tilt">
+      <img src="https://images.unsplash.com/photo-1633356122102-3fe601e05bd2?q=80&w=1170&auto=format&fit=crop">
+      <h3>Cyber Dashboard</h3>
+      <p>Interaktives UI mit Neon-Effekten.</p>
+    </div>
+
+    <div class="project tilt">
+      <img src="https://thumbs.dreamstime.com/b/hands-typing-keyboard-graphical-interface-performance-optimization-data-analysis-visualization-asymptotic-smart-394596463.jpg">
+      <h3>Hacker Interface</h3>
+      <p>Futuristische Datenvisualisierung.</p>
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills" class="section reveal">
+  <h2 class="type-title" data-text="SKILLS & TOOLS"></h2>
+  <div class="skills">
+    <span>HTML</span>
+    <span>CSS</span>
+    <span>JavaScript</span>
+    <span>Responsive Design</span>
+    <span>Figma</span>
+    <span>Git & GitHub</span>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="section dark reveal">
+  <h2 class="type-title" data-text="KONTAKT"></h2>
+  <div class="glass-box">
+    <p>Mail: <a href="mailto:you@example.com">you@example.com</a></p>
+    <p class="hint">(Pro-Tipp: Halte irgendwo 3 Sekunden gedrückt 😏)</p>
+  </div>
+</section>
 
 <footer class="footer">
-  <p>© 2025 AbuSagrotan — Welcher verdammte hundekörper hat grad Schubkarre gegen mein Fenster geworfen?</p>
+  © 2025 DEDSEC
 </footer>
+
+<div id="easter">
+  <h2>ACCESS GRANTED</h2>
+  <p>DEDSEC PROTOCOL ACTIVATED</p>
+</div>
 
 <script src="script.js"></script>
 </body>
 </html>
-
