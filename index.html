@@ -8,11 +8,13 @@
 </head>
 <body>
 
-<!-- BACKGROUNDS -->
 <canvas id="matrix"></canvas>
 <div id="noise"></div>
 
-<!-- NAVBAR -->
+<!-- SOUNDS -->
+<audio id="hoverSound" src="sounds/ui-hover.mp3" preload="auto"></audio>
+<audio id="clickSound" src="sounds/ui-click.mp3" preload="auto"></audio>
+
 <header class="navbar">
   <div class="logo">DEDSEC</div>
 
@@ -27,7 +29,6 @@
     <span></span><span></span><span></span>
   </div>
 
-  <!-- Scroll Progress -->
   <div class="scroll-progress"></div>
 </header>
 
@@ -36,11 +37,10 @@
 <!-- HERO -->
 <section id="home" class="hero">
   <div class="hero-overlay"></div>
-
   <div class="hero-box">
     <h1 class="decode" data-text="WELCOME TO DEDSEC">WELCOME TO DEDSEC</h1>
-    <p class="lead">Modern Web Experiences — Futuristic & Cinematic</p>
-    <a href="#projects" class="hero-btn">Meine Projekte</a>
+    <p class="lead">Cinematic Web Experiences & Interactive Interfaces</p>
+    <a href="#projects" class="hero-btn">Explore Projects</a>
   </div>
 </section>
 
@@ -48,9 +48,17 @@
 <section id="about" class="section reveal">
   <h2 class="typewriter" data-text="ÜBER MICH"></h2>
   <p class="section-text">
-    Ich lerne Webentwicklung mit Fokus auf hochwertige Interfaces,
-    Animationen und moderne User Experiences.
+    Ich baue moderne, animierte Web-Erlebnisse mit Fokus auf UI, Motion
+    und Benutzerführung. Jede Interaktion soll sich wertig anfühlen.
   </p>
+</section>
+
+<!-- FEATURES -->
+<section class="features reveal">
+  <div class="feature">⚡ Smooth Motion</div>
+  <div class="feature">🎧 Micro Sound FX</div>
+  <div class="feature">📱 Mobile First</div>
+  <div class="feature">🧠 UX Focused</div>
 </section>
 
 <!-- PROJECTS -->
@@ -58,30 +66,40 @@
   <h2 class="typewriter" data-text="MEINE PROJEKTE"></h2>
 
   <div class="projects">
-    <div class="project">
-      <img src="https://images.unsplash.com/photo-1633356122102-3fe601e05bd2?q=80&w=1200&auto=format&fit=crop">
-      <h3>Cyber Dashboard</h3>
-      <p>Neon UI, Motion & futuristisches Design.</p>
-    </div>
+    <a class="project"
+       href="https://www.youtube.com/shorts/HS-1qgRhMMo?feature=share"
+       target="_blank">
 
-    <div class="project">
+      <img src="https://images.unsplash.com/photo-1633356122102-3fe601e05bd2?q=80&w=1200&auto=format&fit=crop">
+      <h3>Interactive Cyber UI</h3>
+      <p>Click to experience motion & interaction.</p>
+      <span class="project-cta">▶ Open</span>
+    </a>
+
+    <a class="project"
+       href="https://www.youtube.com/shorts/HS-1qgRhMMo?feature=share"
+       target="_blank">
+
       <img src="https://thumbs.dreamstime.com/b/hands-typing-keyboard-graphical-interface-performance-optimization-data-analysis-visualization-asymptotic-smart-394596463.jpg">
-      <h3>Hacker Interface</h3>
-      <p>Interaktive Visualisierung & Datenfluss.</p>
-    </div>
+      <h3>Hacker Motion System</h3>
+      <p>Micro interactions & cinematic UI flow.</p>
+      <span class="project-cta">▶ Open</span>
+    </a>
   </div>
+
+  <p class="hint-text">Hover & click the cards for interaction</p>
 </section>
 
 <!-- CONTACT -->
 <section id="contact" class="section reveal">
   <h2 class="typewriter" data-text="KONTAKT"></h2>
   <p class="section-text">
-    Mail: <a href="mailto:you@example.com">you@example.com</a>
+    you@example.com
   </p>
 </section>
 
 <footer class="footer">
-  © 2025 DEDSEC
+  © 2025 DEDSEC — Built with focus & obsession.
 </footer>
 
 </main>
