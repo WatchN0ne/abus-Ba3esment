@@ -8,79 +8,48 @@ body {
   background: #000;
   color: #fff;
   font-family: system-ui, Arial, sans-serif;
-  overflow-x: hidden;
-}
-
-/* MATRIX */
-#matrix {
-  position: fixed;
-  inset: 0;
-  z-index: 0;
-  opacity: 0.25;
 }
 
 /* NAVBAR */
 .navbar {
   position: fixed;
-  top: 12px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: calc(100% - 24px);
-  max-width: 1200px;
-  height: 60px;
-  padding: 0 20px;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 20px 40px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: rgba(0,0,0,0.8);
-  backdrop-filter: blur(14px);
-  border-radius: 16px;
-  border: 1px solid rgba(0,255,238,0.25);
+  background: rgba(0,0,0,0.85);
   z-index: 100;
 }
 
 .logo {
   color: #00ffee;
   font-weight: 800;
-  letter-spacing: 4px;
-  font-size: 14px;
+  letter-spacing: 3px;
 }
 
-.nav-links {
-  display: flex;
-  gap: 26px;
-  position: relative;
-}
-
-.nav-link {
-  color: rgba(255,255,255,0.6);
+.nav-links a {
+  margin-left: 24px;
+  color: #fff;
   text-decoration: none;
-  font-size: 13px;
-  letter-spacing: 1.5px;
-  text-transform: uppercase;
+  opacity: 0.7;
 }
 
-.nav-link.active {
-  color: #00ffee;
-}
-
-.nav-indicator {
-  position: absolute;
-  bottom: -8px;
-  height: 2px;
-  background: #00ffee;
-  transition: 0.3s;
+.nav-links a:hover {
+  opacity: 1;
 }
 
 /* HERO */
 .hero {
   min-height: 100vh;
-  padding-top: 80px;
+  background: url("https://img.goodfon.com/original/1920x1080/b/17/ubisoft-dedsec-watch-dogs-2-watch-dogs-hacker-khaker.jpg")
+    center/cover no-repeat;
   display: flex;
   justify-content: center;
   align-items: center;
-  background: url("https://img.goodfon.com/original/1920x1080/b/17/ubisoft-dedsec-watch-dogs-2-watch-dogs-hacker-khaker.jpg")
-    center/cover no-repeat;
+  padding-top: 80px;
 }
 
 .hero-overlay {
@@ -91,24 +60,15 @@ body {
 
 .hero-box {
   position: relative;
-  background: rgba(0,0,0,0.75);
-  padding: 48px;
-  border-radius: 24px;
   text-align: center;
-  box-shadow: 0 0 60px rgba(0,255,238,0.5);
-}
-
-.decode {
-  font-size: clamp(2.4rem, 6vw, 3.8rem);
-  background: linear-gradient(90deg,#00ffee,#a200ff);
-  -webkit-background-clip: text;
-  color: transparent;
-  font-weight: 900;
+  background: rgba(0,0,0,0.75);
+  padding: 50px;
+  border-radius: 20px;
 }
 
 .hero-btn {
-  margin-top: 24px;
   display: inline-block;
+  margin-top: 20px;
   padding: 12px 28px;
   border-radius: 999px;
   background: linear-gradient(90deg,#00ffee,#a200ff);
@@ -121,63 +81,31 @@ body {
 .section {
   padding: 140px 20px;
   text-align: center;
-  position: relative;
-  z-index: 10;
 }
 
 .dark {
   background: #070707;
 }
 
-.section-text {
-  max-width: 800px;
-  margin: 20px auto 0;
-  opacity: 0.85;
-}
-
-/* FEATURES */
-.features {
-  max-width: 1100px;
-  margin: 60px auto 0;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px,1fr));
-  gap: 24px;
-  padding: 40px;
-  border-radius: 24px;
-  background: rgba(0,0,0,0.55);
-  backdrop-filter: blur(8px);
-}
-
-.feature {
-  padding: 18px;
-  border: 1px solid rgba(0,255,238,0.35);
-  border-radius: 999px;
-}
-
 /* PROJECTS */
-/* PROJECT GRID */
 .projects-grid {
   max-width: 1100px;
   margin: 80px auto 0;
-  padding: 0 20px;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(280px,1fr));
   gap: 36px;
 }
 
-/* PROJECT CARD */
 .project-card {
   position: relative;
   height: 240px;
   border-radius: 18px;
   overflow: hidden;
   text-decoration: none;
-  color: white;
   box-shadow: 0 0 30px rgba(0,255,238,0.25);
   transition: transform 0.35s ease, box-shadow 0.35s ease;
 }
 
-/* IMAGE */
 .project-card img {
   width: 100%;
   height: 100%;
@@ -185,40 +113,33 @@ body {
   transition: transform 0.4s ease, filter 0.4s ease;
 }
 
-/* OVERLAY */
 .project-overlay {
   position: absolute;
   inset: 0;
   background: rgba(0,0,0,0.75);
-  backdrop-filter: blur(2px);
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  text-align: center;
   opacity: 0;
-  transition: opacity 0.35s ease;
-  pointer-events: none;
+  transition: 0.35s ease;
+  text-align: center;
 }
 
-/* TEXT IM OVERLAY */
 .project-overlay p {
   font-size: 14px;
   letter-spacing: 1px;
-  opacity: 0.9;
+  margin-bottom: 14px;
 }
 
 .project-overlay span {
-  margin-top: 14px;
   padding: 10px 22px;
   border-radius: 999px;
   background: linear-gradient(90deg,#00ffee,#a200ff);
   color: #000;
   font-weight: 700;
-  font-size: 13px;
 }
 
-/* HOVER / INTERACTION */
 .project-card:hover {
   transform: translateY(-12px) scale(1.03);
   box-shadow:
@@ -233,39 +154,18 @@ body {
 
 .project-card:hover .project-overlay {
   opacity: 1;
-  pointer-events: auto;
 }
 
-/* MOBILE SAFE */
+/* MOBILE */
 @media (hover: none) {
   .project-overlay {
     opacity: 1;
-    background: rgba(0,0,0,0.65);
   }
 }
 
-
-/* SWOOSH / REVEAL */
-.reveal {
-  opacity: 0;
-  transform: translateY(60px);
-  transition: 0.8s ease;
-}
-
-.reveal.show {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* STAGGER */
-.delay-1 { transition-delay: 0.1s; }
-.delay-2 { transition-delay: 0.2s; }
-.delay-3 { transition-delay: 0.3s; }
-.delay-4 { transition-delay: 0.4s; }
-
 /* FOOTER */
 .footer {
-  padding: 32px;
+  padding: 40px;
+  text-align: center;
   opacity: 0.6;
 }
-
