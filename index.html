@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>DEDSEC | Cyber Portfolio</title>
-  <link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DEDSEC | Portfolio</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
@@ -29,88 +29,69 @@
 
 <main>
 
-<section id="home" class="hero snap">
+<section id="home" class="hero">
   <div class="hero-overlay"></div>
   <div class="hero-box reveal">
     <h1 class="decode">WELCOME TO DEDSEC</h1>
-    <p class="lead">Cinematic Web Experiences. Interactive Interfaces. Laminat in Kontaktgrill.</p>
+    <p class="lead">Cinematic Web Experiences & Interactive Interfaces</p>
     <a href="#projects" class="hero-btn">Explore Projects</a>
   </div>
 </section>
 
-<section id="about" class="section snap reveal">
-  <h2>ÜBER MICH</h2>
-  <p class="section-text">
-    Mein Weg zum Webentwickler und psychologische Wrack.
+<section id="about" class="section">
+  <h2 class="reveal">ÜBER MICH</h2>
+  <p class="section-text reveal">
+    Moderne Webentwicklung mit Fokus auf Motion, UX, Performance und psychologische knock out.
   </p>
 </section>
 
-<section id="features" class="section snap reveal">
+<section id="features" class="section">
   <div class="features">
-    <div class="feature">⚡ Smooth Motion</div>
-    <div class="feature">🎧 Micro Sound FX</div>
-    <div class="feature">📱 Mobile First</div>
-    <div class="feature">🧠 UX Focus</div>
+    <div class="feature reveal delay-1">⚡ Smooth Motion</div>
+    <div class="feature reveal delay-2">🎧 Micro FX</div>
+    <div class="feature reveal delay-3">📱 Mobile First</div>
+    <div class="feature reveal delay-4">🧠 UX Focus</div>
   </div>
 </section>
 
-<section id="projects" class="section dark snap reveal">
-  <h2>MEINE PROJEKTE</h2>
+<section id="projects" class="section dark">
+  <h2 class="reveal">MEINE PROJEKTE</h2>
 
   <div class="projects-grid">
-    <div class="project-card"
-      data-title="Cyber UI System"
-      data-description="Cinematic UI mit Neon Motion, Micro Interactions und Hacker Aesthetics."
-      data-image="https://images.unsplash.com/photo-1633356122102-3fe601e05bd2?q=80&w=1200&auto=format&fit=crop"
-      data-link="https://www.youtube.com/shorts/HS-1qgRhMMo?feature=share">
-
-      <img src="https://images.unsplash.com/photo-1633356122102-3fe601e05bd2?q=80&w=1200&auto=format&fit=crop" />
+    <div class="project-card reveal delay-1">
+      <img src="https://images.unsplash.com/photo-1633356122102-3fe601e05bd2?q=80&w=1200&auto=format&fit=crop">
       <div class="overlay">
-        <h3>Cyber UI System</h3>
-        <p>Motion · Neon · Interaction</p>
-        <span>▶ Details</span>
+        <h3>Cyber UI</h3>
+        <p>Motion · Neon · UX</p>
       </div>
     </div>
 
-    <div class="project-card"
-      data-title="Hacker Motion"
-      data-description="Performance UI, Optimized UX und interaktive Motion Patterns."
-      data-image="https://thumbs.dreamstime.com/b/hands-typing-keyboard-graphical-interface-performance-optimization-data-analysis-visualization-asymptotic-smart-394596463.jpg"
-      data-link="https://www.youtube.com/shorts/HS-1qgRhMMo?feature=share">
-
-      <img src="https://thumbs.dreamstime.com/b/hands-typing-keyboard-graphical-interface-performance-optimization-data-analysis-visualization-asymptotic-smart-394596463.jpg" />
+    <div class="project-card reveal delay-2">
+      <img src="https://thumbs.dreamstime.com/b/hands-typing-keyboard-graphical-interface-performance-optimization-data-analysis-visualization-asymptotic-smart-394596463.jpg">
       <div class="overlay">
         <h3>Hacker Motion</h3>
         <p>Cinematic Flow</p>
-        <span>▶ Details</span>
+      </div>
+    </div>
+
+    <div class="project-card reveal delay-3">
+      <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=1200&auto=format&fit=crop">
+      <div class="overlay">
+        <h3>Future Interface</h3>
+        <p>Micro Interactions</p>
       </div>
     </div>
   </div>
 </section>
 
-<section id="contact" class="section snap reveal">
-  <h2>KONTAKT</h2>
-  <h3>AbuSagrotan</h3>
-  <p class="section-text">de3dseq@icloud.com</p>
+<section id="contact" class="section">
+  <h2 class="reveal">KONTAKT</h2>
+  <p class="section-text reveal">AbuSagrotan@icloud.com</p>
 </section>
 
 <footer class="footer">© 2025 DEDSEC — Welcher verdammte hundekörper hat grad Schubkarre gegen mein Fenster geworfen?!</footer>
 
-<!-- PROJECT MODAL -->
-<div class="modal" id="projectModal">
-  <div class="modal-backdrop"></div>
-  <div class="modal-content">
-    <button class="modal-close">&times;</button>
-    <img id="modalImage" />
-    <h3 id="modalTitle"></h3>
-    <p id="modalDescription"></p>
-    <a id="modalLink" target="_blank" class="modal-btn">▶ Projekt ansehen</a>
-  </div>
-</div>
-
-</main>
-
 <script src="script.js"></script>
+</main>
 </body>
 </html>
-
