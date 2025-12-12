@@ -1,104 +1,60 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>DEDSEC Cyber Portfolio</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DEDSEC</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-<div id="noise"></div>
 <canvas id="matrix"></canvas>
 
 <header class="navbar">
   <div class="logo">DEDSEC</div>
 
-  <nav class="nav-links">
-    <a href="#home" data-link>Home</a>
-    <a href="#about" data-link>Über</a>
-    <a href="#projects" data-link>Projekte</a>
-    <a href="#skills" data-link>Skills</a>
-    <a href="#contact" data-link>Kontakt</a>
+  <nav class="nav-links" id="nav">
+    <a href="#home">Home</a>
+    <a href="#about">Über</a>
+    <a href="#projects">Projekte</a>
+    <a href="#contact">Kontakt</a>
   </nav>
 
-  <div class="hamburger" id="hamburger">
+  <div class="hamburger" id="burger">
     <span></span><span></span><span></span>
   </div>
 </header>
 
 <main>
 
-<!-- HERO -->
 <section id="home" class="hero">
-  <div class="hero-overlay"></div>
-  <div class="hero-box">
-    <h1 class="decode glitch-text" data-text="WELCOME TO DEDSEC">WELCOME TO DEDSEC</h1>
-    <p class="lead">Modern Web Experiences — Futuristic. Animated. Clean.</p>
-    <a href="#projects" class="hero-btn" data-link>Meine Projekte</a>
+  <div class="hero-content">
+    <h1 class="decode" data-text="WELCOME TO DEDSEC">WELCOME TO DEDSEC</h1>
+    <p class="lead">Modern Web Experiences</p>
+    <a href="#projects" class="btn">Meine Projekte</a>
   </div>
 </section>
 
-<!-- ABOUT -->
 <section id="about" class="section reveal">
-  <h2 class="type-title" data-text="ÜBER MICH"></h2>
-  <div class="glass-box">
-    <p>
-      Ich starte meine Web-Dev-Reise mit Fokus auf moderne, animierte und
-      performante Webseiten. Ziel: React, UX, sauberes UI.
-    </p>
-  </div>
+  <h2 class="typewriter" data-text="ÜBER MICH"></h2>
+  <p>Ich starte meine Web-Dev-Journey mit Fokus auf moderne, performante Websites.</p>
 </section>
 
-<!-- PROJECTS -->
 <section id="projects" class="section dark reveal">
-  <h2 class="type-title" data-text="MEINE PROJEKTE"></h2>
+  <h2 class="typewriter" data-text="MEINE PROJEKTE"></h2>
 
-  <div class="projects">
-    <div class="project tilt">
-      <img src="https://images.unsplash.com/photo-1633356122102-3fe601e05bd2?q=80&w=1170&auto=format&fit=crop">
-      <h3>Cyber Dashboard</h3>
-      <p>Interaktives UI mit Neon-Effekten.</p>
-    </div>
-
-    <div class="project tilt">
-      <img src="https://thumbs.dreamstime.com/b/hands-typing-keyboard-graphical-interface-performance-optimization-data-analysis-visualization-asymptotic-smart-394596463.jpg">
-      <h3>Hacker Interface</h3>
-      <p>Futuristische Datenvisualisierung.</p>
-    </div>
+  <div class="cards">
+    <div class="card">Cyber Dashboard</div>
+    <div class="card">Hacker Interface</div>
   </div>
 </section>
 
-<!-- SKILLS -->
-<section id="skills" class="section reveal">
-  <h2 class="type-title" data-text="SKILLS & TOOLS"></h2>
-  <div class="skills">
-    <span>HTML</span>
-    <span>CSS</span>
-    <span>JavaScript</span>
-    <span>Responsive Design</span>
-    <span>Figma</span>
-    <span>Git & GitHub</span>
-  </div>
+<section id="contact" class="section reveal">
+  <h2 class="typewriter" data-text="KONTAKT"></h2>
+  <p>you@example.com</p>
 </section>
 
-<!-- CONTACT -->
-<section id="contact" class="section dark reveal">
-  <h2 class="type-title" data-text="KONTAKT"></h2>
-  <div class="glass-box">
-    <p>Mail: <a href="mailto:you@example.com">you@example.com</a></p>
-    <p class="hint">(Pro-Tipp: Halte irgendwo 3 Sekunden gedrückt 😏)</p>
-  </div>
-</section>
-
-<footer class="footer">
-  © 2025 DEDSEC
-</footer>
-
-<div id="easter">
-  <h2>ACCESS GRANTED</h2>
-  <p>DEDSEC PROTOCOL ACTIVATED</p>
-</div>
+</main>
 
 <script src="script.js"></script>
 </body>
