@@ -83,24 +83,16 @@ header, main, section, footer {
   color: #ffffff;
 }
 
-.nav-link.active {
-  color: #00ffee;
-}
-
-
-.nav-link.active::after {
-  content: "";
+.nav-indicator {
   position: absolute;
-  left: 50%;
-  bottom: -10px;
-  transform: translateX(-50%);
-  width: 14px;
+  bottom: 10px;
   height: 2px;
+  width: 0;
   background: #00ffee;
-  border-radius: 2px;
   box-shadow: 0 0 6px rgba(0,255,238,0.6);
+  border-radius: 2px;
+  transition: all 0.35s ease;
 }
-
 
 .logo {
   color: #00ffee;
@@ -283,5 +275,6 @@ header, main, section, footer {
   opacity:1;
   transform:translateY(0);
 }
+
 
 
