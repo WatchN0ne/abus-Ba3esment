@@ -2,8 +2,10 @@
 
 html, body {
   width: 100%;
+  min-height: 100%;
   overflow-x: hidden;
 }
+
 
 body {
   background:#000;
@@ -18,15 +20,16 @@ section, header, main {
 }
 
 /* BACKGROUNDS */
-#matrix, #noise {
+#matrix {
   position: fixed;
   inset: 0;
   z-index: 0;
 }
 
 #noise {
-  opacity: 0.12;
-  background-image: url("https://grainy-gradients.vercel.app/noise.svg");
+  position: fixed;
+  inset: 0;
+  z-index: 1;
   pointer-events: none;
 }
 
@@ -71,20 +74,13 @@ section, header, main {
 }
 
 .hero-overlay {
-  position:absolute;
-  inset:0;
-  background:rgba(0,0,0,0.6);
+  z-index: 1;
+}
+.hero-box {
+  position: relative;
+  z-index: 2;
 }
 
-.hero-box {
-  position:relative;
-  max-width:720px;
-  width:100%;
-  padding:36px;
-  background:rgba(0,0,0,0.75);
-  border-radius:20px;
-  text-align:center;
-}
 
 /* TITLES */
 .decode {
@@ -178,4 +174,12 @@ section, header, main {
 #easter.show {
   opacity:1;
   pointer-events:auto;
+}
+
+header,
+main,
+section,
+footer {
+  position: relative;
+  z-index: 10;
 }
