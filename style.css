@@ -276,5 +276,16 @@ header, main, section, footer {
   transform:translateY(0);
 }
 
+main {
+  scroll-snap-type: y mandatory;
+}
+
+section {
+  scroll-snap-align: start;
+}
+
+html {
+  scroll-behavior: smooth;
+}
 
 
