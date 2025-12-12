@@ -96,3 +96,20 @@ if (innerWidth > 900) {
     });
   });
 }
+
+const indicator = document.querySelector(".nav-indicator");
+
+function moveIndicator(link) {
+  const rect = link.getBoundingClientRect();
+  const parentRect = link.parentElement.getBoundingClientRect();
+
+  indicator.style.width = rect.width + "px";
+  indicator.style.left = rect.left - parentRect.left + "px";
+}
+
+// Initial
+moveIndicator(document.querySelector(".nav-link.active"));
+
+navLinks.forEach(link => {
+  link.addEventListener("mouseenter", () => moveIndicator(link));
+});
