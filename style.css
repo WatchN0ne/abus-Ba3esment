@@ -9,7 +9,7 @@ html, body {
 body {
   background:#000;
   color:#fff;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+  font-family:system-ui, Arial, sans-serif;
 }
 
 /* BACKGROUNDS */
@@ -29,7 +29,7 @@ body {
   background-image:url("https://grainy-gradients.vercel.app/noise.svg");
 }
 
-/* CONTENT LAYER */
+/* CONTENT */
 header, main, section, footer {
   position:relative;
   z-index:10;
@@ -56,78 +56,6 @@ header, main, section, footer {
   letter-spacing:3px;
 }
 
-.nav-links {
-  display:flex;
-  gap:26px;
-}
-
-.nav-link {
-  color:#fff;
-  text-decoration:none;
-  font-size:15px;
-  opacity:0.7;
-  position:relative;
-  transition:0.3s;
-}
-
-.nav-link.active,
-.nav-link:hover {
-  opacity:1;
-  color:#00ffee;
-}
-
-.nav-link.active::after {
-  content:"";
-  position:absolute;
-  left:0;
-  bottom:-6px;
-  width:100%;
-  height:2px;
-  background:linear-gradient(90deg,#00ffee,#a200ff);
-}
-
-/* Scroll Progress */
-.scroll-progress {
-  position:absolute;
-  bottom:0;
-  left:0;
-  height:2px;
-  width:0%;
-  background:linear-gradient(90deg,#00ffee,#a200ff);
-}
-
-/* HAMBURGER */
-.hamburger {
-  display:none;
-  flex-direction:column;
-  gap:6px;
-  cursor:pointer;
-}
-
-.hamburger span {
-  width:28px;
-  height:3px;
-  background:#00ffee;
-}
-
-/* MOBILE NAV */
-@media (max-width:820px) {
-  .nav-links {
-    position:fixed;
-    top:64px;
-    right:-100%;
-    width:70%;
-    height:calc(100vh - 64px);
-    background:rgba(0,0,0,0.95);
-    flex-direction:column;
-    padding:32px;
-    transition:0.35s ease;
-  }
-
-  .nav-links.show { right:0; }
-  .hamburger { display:flex; }
-}
-
 /* HERO */
 .hero {
   min-height:100vh;
@@ -143,9 +71,7 @@ header, main, section, footer {
 .hero-overlay {
   position:absolute;
   inset:0;
-  background:
-    radial-gradient(circle at 30% 30%, rgba(0,255,238,0.25), transparent 50%),
-    rgba(0,0,0,0.6);
+  background:rgba(0,0,0,0.6);
 }
 
 .hero-box {
@@ -158,7 +84,7 @@ header, main, section, footer {
   box-shadow:
     0 0 40px rgba(0,255,238,0.4),
     0 0 90px rgba(162,0,255,0.35);
-  animation: heroBreath 6s ease-in-out infinite;
+  animation:heroBreath 6s ease-in-out infinite;
 }
 
 @keyframes heroBreath {
@@ -198,27 +124,20 @@ header, main, section, footer {
   text-decoration:none;
 }
 
-/* SECTIONS */
-.section {
-  padding:120px 20px;
-  text-align:center;
+/* FEATURES */
+.features {
+  display:flex;
+  justify-content:center;
+  gap:24px;
+  padding:60px 20px;
+  flex-wrap:wrap;
 }
 
-.dark { background:#070707; }
-
-.section-text {
-  max-width:720px;
-  margin:0 auto;
+.feature {
+  padding:14px 22px;
+  border:1px solid rgba(0,255,238,0.4);
+  border-radius:999px;
   opacity:0.85;
-  line-height:1.6;
-}
-
-/* TYPEWRITER */
-.typewriter {
-  font-size:2rem;
-  margin-bottom:24px;
-  min-height:2.4rem;
-  color:#00ffee;
 }
 
 /* PROJECTS */
@@ -234,15 +153,18 @@ header, main, section, footer {
   background:rgba(15,15,15,0.9);
   border-radius:18px;
   overflow:hidden;
-  transition:0.3s;
+  text-decoration:none;
+  color:white;
   box-shadow:0 0 30px rgba(0,255,238,0.25);
+  transition:transform 0.3s, box-shadow 0.3s;
+  position:relative;
 }
 
 .project:hover {
-  transform:translateY(-14px);
+  transform:translateY(-16px) scale(1.03);
   box-shadow:
-    0 0 50px rgba(0,255,238,0.6),
-    0 0 90px rgba(162,0,255,0.4);
+    0 0 60px rgba(0,255,238,0.6),
+    0 0 100px rgba(162,0,255,0.4);
 }
 
 .project img {
@@ -252,12 +174,41 @@ header, main, section, footer {
 }
 
 .project h3 {
-  margin:16px 16px 8px;
+  margin:16px;
 }
 
 .project p {
-  margin:0 16px 20px;
+  margin:0 16px 8px;
   opacity:0.75;
+}
+
+.project-cta {
+  display:block;
+  margin:0 16px 20px;
+  color:#00ffee;
+  font-weight:600;
+}
+
+.hint-text {
+  margin-top:28px;
+  opacity:0.6;
+  font-size:0.9rem;
+}
+
+/* SECTIONS */
+.section {
+  padding:120px 20px;
+  text-align:center;
+}
+
+.dark { background:#070707; }
+
+/* TYPEWRITER */
+.typewriter {
+  font-size:2rem;
+  margin-bottom:24px;
+  min-height:2.4rem;
+  color:#00ffee;
 }
 
 /* FOOTER */
@@ -273,6 +224,7 @@ header, main, section, footer {
   transform:translateY(40px);
   transition:0.8s ease;
 }
+
 .reveal.show {
   opacity:1;
   transform:translateY(0);
