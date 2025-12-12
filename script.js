@@ -1,25 +1,23 @@
 /* CURSOR */
-const cursor=document.querySelector(".cursor");
-const trail=document.querySelector(".cursor-trail");
-
-document.addEventListener("mousemove",e=>{
-  cursor.style.transform=`translate(${e.clientX}px,${e.clientY}px)`;
-  trail.style.transform=`translate(${e.clientX-8}px,${e.clientY-8}px)`;
+const c=document.querySelector(".cursor");
+const t=document.querySelector(".cursor-trail");
+addEventListener("mousemove",e=>{
+  c.style.transform=`translate(${e.clientX}px,${e.clientY}px)`;
+  t.style.transform=`translate(${e.clientX-8}px,${e.clientY-8}px)`;
 });
 
-/* SCROLL REVEAL */
-const reveals=document.querySelectorAll(".reveal");
-function revealOnScroll(){
-  reveals.forEach(el=>{
+/* SCROLL */
+const r=document.querySelectorAll(".reveal");
+function scrollReveal(){
+  r.forEach(el=>{
     if(el.getBoundingClientRect().top<innerHeight-120){
       el.classList.add("show");
     }
   });
 }
-addEventListener("scroll",revealOnScroll);
-revealOnScroll();
+addEventListener("scroll",scrollReveal);scrollReveal();
 
-/* HERO PARALLAX */
+/* PARALLAX */
 const hero=document.querySelector(".hero");
 if(matchMedia("(hover:hover)").matches){
   hero.addEventListener("mousemove",e=>{
@@ -30,13 +28,8 @@ if(matchMedia("(hover:hover)").matches){
   });
 }
 
-/* EASTER EGG */
-let keys=[];
-const konami="ArrowUpArrowUpArrowDownArrowDownArrowLeftArrowRightArrowLeftArrowRightba";
-addEventListener("keydown",e=>{
-  keys.push(e.key);
-  if(keys.join("").includes(konami)){
-    alert("DEDSEC // ACCESS GRANTED");
-    keys=[];
-  }
+/* SECRET DARK / LIGHT */
+const toggle=document.getElementById("themeToggle");
+toggle.addEventListener("click",()=>{
+  document.body.classList.toggle("light");
 });
