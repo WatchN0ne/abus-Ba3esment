@@ -37,17 +37,56 @@ header, main, section, footer {
 
 /* NAVBAR */
 .navbar {
-  position:fixed;
-  top:0; left:0; right:0;
-  height:64px;
-  padding:0 24px;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  background:rgba(0,0,0,0.85);
-  backdrop-filter:blur(12px);
-  border-bottom:1px solid rgba(0,255,238,0.25);
-  z-index:100;
+  position: fixed;
+  top: 16px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: calc(100% - 48px);
+  max-width: 1200px;
+  height: 64px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 0 28px;
+
+  background: rgba(0, 0, 0, 0.75);
+  backdrop-filter: blur(16px);
+
+  border-radius: 18px;
+  border: 1px solid rgba(0, 255, 238, 0.25);
+
+  box-shadow:
+    0 10px 40px rgba(0, 0, 0, 0.7),
+    0 0 40px rgba(0, 255, 238, 0.15);
+
+  z-index: 100;
+}
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+}
+
+.nav-link {
+  font-size: 14px;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  opacity: 0.7;
+}
+
+.nav-link.active::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: -8px;
+  width: 6px;
+  height: 6px;
+  transform: translateX(-50%);
+  background: #00ffee;
+  border-radius: 50%;
+  box-shadow: 0 0 10px #00ffee;
 }
 
 .logo {
@@ -229,3 +268,4 @@ header, main, section, footer {
   opacity:1;
   transform:translateY(0);
 }
+
