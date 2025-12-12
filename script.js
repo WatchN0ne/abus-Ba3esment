@@ -26,7 +26,7 @@ setInterval(() => {
   });
 }, 40);
 
-/* HERO DECODE */
+/* DECODE HERO */
 document.querySelectorAll(".decode").forEach(el=>{
   const text = el.dataset.text;
   const rand = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
@@ -69,7 +69,7 @@ const reveal = () => {
 addEventListener("scroll", reveal);
 reveal();
 
-/* HERO PARALLAX (Desktop) */
+/* HERO PARALLAX */
 const heroBox = document.querySelector(".hero-box");
 addEventListener("mousemove", e=>{
   if(innerWidth < 900 || !heroBox) return;
@@ -78,37 +78,21 @@ addEventListener("mousemove", e=>{
   heroBox.style.transform = `translate(${x}px, ${y}px)`;
 });
 
-/* NAVBAR ACTIVE + PROGRESS */
-const sections = document.querySelectorAll("section");
-const links = document.querySelectorAll(".nav-link");
-const progress = document.querySelector(".scroll-progress");
+/* SOUND FX */
+const hoverSound = document.getElementById("hoverSound");
+const clickSound = document.getElementById("clickSound");
 
-addEventListener("scroll", ()=>{
-  const scrollTop = scrollY;
-  const height = document.body.scrollHeight - innerHeight;
-  progress.style.width = (scrollTop / height) * 100 + "%";
-
-  sections.forEach(sec=>{
-    const top = sec.offsetTop - 120;
-    const bottom = top + sec.offsetHeight;
-    if(scrollTop >= top && scrollTop < bottom){
-      links.forEach(l=>l.classList.remove("active"));
-      const active = document.querySelector(`.nav-link[href="#${sec.id}"]`);
-      if(active) active.classList.add("active");
-    }
+if (innerWidth > 900) {
+  document.querySelectorAll(".project, .hero-btn, .nav-link").forEach(el=>{
+    el.addEventListener("mouseenter", ()=>{
+      hoverSound.currentTime = 0;
+      hoverSound.volume = 0.15;
+      hoverSound.play();
+    });
+    el.addEventListener("click", ()=>{
+      clickSound.currentTime = 0;
+      clickSound.volume = 0.25;
+      clickSound.play();
+    });
   });
-});
-
-/* MOBILE NAV */
-const burger = document.getElementById("burger");
-const nav = document.getElementById("nav");
-burger.onclick = () => nav.classList.toggle("show");
-
-document.querySelectorAll(".nav-link").forEach(a=>{
-  a.onclick = e=>{
-    e.preventDefault();
-    document.querySelector(a.getAttribute("href"))
-      .scrollIntoView({behavior:"smooth"});
-    nav.classList.remove("show");
-  };
-});
+}
