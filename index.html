@@ -3,39 +3,31 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>DEDSEC | Cyber Portfolio</title>
+  <title>DEDSEC | Portfolio</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
 <canvas id="matrix"></canvas>
-<div id="noise"></div>
-
-<!-- SOUNDS -->
-<audio id="hoverSound" src="sounds/ui-hover.mp3" preload="auto"></audio>
-<audio id="clickSound" src="sounds/ui-click.mp3" preload="auto"></audio>
 
 <header class="navbar">
   <div class="logo">DEDSEC</div>
 
   <nav class="nav-links" id="nav">
-    <div class="nav-indicator"></div>
-    <a href="#home" class="nav-link">Home</a>
+    <a href="#home" class="nav-link active">Home</a>
     <a href="#about" class="nav-link">Über</a>
     <a href="#projects" class="nav-link">Projekte</a>
     <a href="#contact" class="nav-link">Kontakt</a>
+    <div class="nav-indicator"></div>
   </nav>
 
   <div class="hamburger" id="burger">
     <span></span><span></span><span></span>
   </div>
-
-  <div class="scroll-progress"></div>
 </header>
 
 <main>
 
-<!-- HERO -->
 <section id="home" class="hero">
   <div class="hero-overlay"></div>
   <div class="hero-box">
@@ -45,77 +37,51 @@
   </div>
 </section>
 
-<!-- ABOUT -->
-<section id="about" class="section reveal">
+<section id="about" class="section">
   <h2 class="typewriter" data-text="ÜBER MICH"></h2>
   <p class="section-text">
-    Ich baue moderne, animierte Web-Erlebnisse mit Fokus auf UI, Motion
-    und Benutzerführung. Jede Interaktion soll sich wertig anfühlen.
+    Ich entwickle moderne Web Interfaces mit Fokus auf Animation,
+    Performance und User Experience.
   </p>
 </section>
 
-<!-- FEATURES -->
-<section class="features reveal">
-  <div class="feature">⚡ Smooth Motion</div>
-  <div class="feature">🎧 Micro Sound FX</div>
-  <div class="feature">📱 Mobile First</div>
-  <div class="feature">🧠 UX Focused</div>
-</section>
-
-<!-- PROJECTS -->
-<section id="projects" class="section dark reveal">
+<section id="projects" class="section dark">
   <h2 class="typewriter" data-text="MEINE PROJEKTE"></h2>
 
-  <div class="projects">
-  <a class="project"
-   href="https://www.youtube.com/shorts/HS-1qgRhMMo?feature=share"
-   target="_blank">
-
-  <div class="project-media">
-    <img src="https://images.unsplash.com/photo-1633356122102-3fe601e05bd2?q=80&w=1200&auto=format&fit=crop">
-  </div>
-
-  <div class="project-overlay">
-    <h3>Hacker Motion System</h3>
-    <p>Micro interactions & cinematic UI flow.</p>
-    <span>▶ Open</span>
-  </div>
-
-</a>
-
-
-    <a class="project"
+  <div class="projects-grid">
+    <a class="project-card"
        href="https://www.youtube.com/shorts/HS-1qgRhMMo?feature=share"
        target="_blank">
+      <img src="https://images.unsplash.com/photo-1633356122102-3fe601e05bd2?q=80&w=1200&auto=format&fit=crop">
+      <div class="overlay">
+        <h3>Cyber UI System</h3>
+        <p>Motion · Neon · Interactions</p>
+        <span>▶ Open</span>
+      </div>
+    </a>
 
+    <a class="project-card"
+       href="https://www.youtube.com/shorts/HS-1qgRhMMo?feature=share"
+       target="_blank">
       <img src="https://thumbs.dreamstime.com/b/hands-typing-keyboard-graphical-interface-performance-optimization-data-analysis-visualization-asymptotic-smart-394596463.jpg">
-      <h3>Hacker Motion System</h3>
-      <p>Micro interactions & cinematic UI flow.</p>
-      <span class="project-cta">▶ Open</span>
+      <div class="overlay">
+        <h3>Hacker Motion</h3>
+        <p>Micro FX & Cinematic Flow</p>
+        <span>▶ Open</span>
+      </div>
     </a>
   </div>
-
-  <p class="hint-text">Hover & click the cards for interaction</p>
 </section>
 
-<!-- CONTACT -->
-<section id="contact" class="section reveal">
+<section id="contact" class="section">
   <h2 class="typewriter" data-text="KONTAKT"></h2>
-  <p class="section-text">
-    you@example.com
-  </p>
+  <p class="section-text">you@example.com</p>
 </section>
 
-<footer class="footer">
-  © 2025 DEDSEC — Built with focus & obsession.
-</footer>
+<footer class="footer">© 2025 DEDSEC</footer>
 
 </main>
 
 <script src="script.js"></script>
 </body>
 </html>
-
-
-
-
