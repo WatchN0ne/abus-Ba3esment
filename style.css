@@ -187,31 +187,42 @@ header, main, section, footer {
 }
 
 /* PROJECTS */
-.projects {
-  display:flex;
-  justify-content:center;
-  gap:28px;
-  flex-wrap:wrap;
-}
-
 .project {
-  width:320px;
-  background:rgba(15,15,15,0.9);
-  border-radius:18px;
-  overflow:hidden;
-  text-decoration:none;
-  color:white;
-  box-shadow:0 0 30px rgba(0,255,238,0.25);
-  transition:transform 0.3s, box-shadow 0.3s;
-  position:relative;
+  position: relative;
 }
 
-.project:hover {
-  transform:translateY(-16px) scale(1.03);
-  box-shadow:
-    0 0 60px rgba(0,255,238,0.6),
-    0 0 100px rgba(162,0,255,0.4);
+.project img {
+  transition: 0.4s ease;
 }
+
+.project-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.75);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  opacity: 0;
+  transition: 0.4s ease;
+}
+
+.project:hover img {
+  transform: scale(1.1);
+  filter: blur(2px) brightness(0.6);
+}
+
+.project:hover .project-overlay {
+  opacity: 1;
+}
+
+.project-overlay span {
+  margin-top: 12px;
+  color: #00ffee;
+  font-weight: 600;
+}
+
 
 .project img {
   width:100%;
@@ -287,5 +298,6 @@ section {
 html {
   scroll-behavior: smooth;
 }
+
 
 
