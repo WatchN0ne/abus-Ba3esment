@@ -1,15 +1,18 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>DEDSEC</title>
-  <link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DEDSEC | Cyber Portfolio</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
+<!-- BACKGROUNDS -->
 <canvas id="matrix"></canvas>
+<div id="noise"></div>
 
+<!-- NAVBAR -->
 <header class="navbar">
   <div class="logo">DEDSEC</div>
 
@@ -27,32 +30,55 @@
 
 <main>
 
+<!-- HERO -->
 <section id="home" class="hero">
-  <div class="hero-content">
+  <div class="hero-overlay"></div>
+
+  <div class="hero-box">
     <h1 class="decode" data-text="WELCOME TO DEDSEC">WELCOME TO DEDSEC</h1>
-    <p class="lead">Modern Web Experiences</p>
-    <a href="#projects" class="btn">Meine Projekte</a>
+    <p class="lead">Modern Web Experiences — Feuerlöscher zwischen Laminat toasten asa7bi</p>
+    <a href="#projects" class="hero-btn">Meine Projekte</a>
   </div>
 </section>
 
+<!-- ABOUT -->
 <section id="about" class="section reveal">
   <h2 class="typewriter" data-text="ÜBER MICH"></h2>
-  <p>Ich starte meine Web-Dev-Journey mit Fokus auf moderne, performante Websites.</p>
+  <p class="section-text">
+    Mein weg zum Webentwickler und psychologische Wrack.
+  </p>
 </section>
 
+<!-- PROJECTS -->
 <section id="projects" class="section dark reveal">
   <h2 class="typewriter" data-text="MEINE PROJEKTE"></h2>
 
-  <div class="cards">
-    <div class="card">Cyber Dashboard</div>
-    <div class="card">Hacker Interface</div>
+  <div class="projects">
+    <div class="project">
+      <img src="https://images.unsplash.com/photo-1633356122102-3fe601e05bd2?q=80&w=1200&auto=format&fit=crop">
+      <h3>Cyber Dashboard</h3>
+      <p>Interaktives Interface mit Neon-UI & Motion.</p>
+    </div>
+
+    <div class="project">
+      <img src="https://thumbs.dreamstime.com/b/hands-typing-keyboard-graphical-interface-performance-optimization-data-analysis-visualization-asymptotic-smart-394596463.jpg">
+      <h3>Hacker Interface</h3>
+      <p>Futuristische Visualisierung & Datenfluss.</p>
+    </div>
   </div>
 </section>
 
+<!-- CONTACT -->
 <section id="contact" class="section reveal">
   <h2 class="typewriter" data-text="KONTAKT"></h2>
-  <p>you@example.com</p>
+  <p class="section-text">
+    Mail: <a href="mailto:you@example.com">you@example.com</a>
+  </p>
 </section>
+
+<footer class="footer">
+  © 2025 DEDSEC
+</footer>
 
 </main>
 
